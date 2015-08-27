@@ -1,0 +1,234 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$grey: #6D6E71;
+$light_grey: #BCBEB0;
+$orange: #F26522;
+$white: #F8F4F1;
+
+body {
+  background: transparent url("BKGRND-paper.png") repeat 0 0;
+  font-family: "franklin-gothic-urw";
+  font-size: 24px;
+  line-height: 30px;
+  color: $grey;
+}
+
+h1,h2 {
+  font-family: "hwt-slab-antique";
+  font-size: 44px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  display: inline-block;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+.full {
+  width: 100%;
+}
+
+.spacer {
+  width: 70%;
+  margin: 20px auto;
+  background: transparent url("CPBG_Line.png") no-repeat 0 5px;
+}
+
+.ornament {
+  background: transparent url("CPBG_ornament.png") no-repeat 0 20px;
+  background-size: 100%;
+}
+
+.content {
+  margin: 0 9%;
+
+  p {
+    margin: 20px 0;
+  }
+
+  #midline{
+    margin: 0 auto;
+    width:85%;
+  }
+}
+
+table.rsvps {
+  margin: 50px;
+
+  tr.odd {
+    background-color: $grey;
+  }
+  tr.even {
+    background-color: $light_grey;
+  }
+  th.attending {
+    width: 140px;
+  }
+  th.name {
+    width: 200px;
+  }
+  th.comment {
+    width: 500px;
+  }
+  th.attending {
+    width: 200px;
+  }
+  td {
+    color: $white;
+    padding: 3px;
+  }
+}
+
+#top-bar {
+  background: transparent url("diagonal-pattern.png") repeat 0 0;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  z-index: 20;
+
+  h1 {
+    margin-left: 65px;
+    padding: 20px 0;
+    vertical-align: top;
+  }
+
+  #vote {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+
+    #yay,#nay {
+      cursor: pointer;
+      margin: 11px 20px;
+      display: inline-block;
+      overflow: hidden;
+      text-indent: -15000px;
+      width: 146px;
+      height: 45px;
+    }
+
+    #yay {
+      background: url('CPBG_Yay.png') no-repeat 0 0;
+      background-size: 100%;
+    }
+    #nay {
+      background: url('CPBG_Nay.png') no-repeat 0 0;
+      background-size: 100%;
+    }
+
+    #yay:hover, #nay:hover {
+      background-position: 0 -45px;
+    }
+  }
+
+  #ribbon {
+    display: inline-block;
+  }
+}
+
+#bottom-spacer {
+  background: transparent url("diagonal-pattern.png") repeat 0 0;
+  height:10px;
+}
+
+#bottom-bar {
+  height: 210px;
+  background-color: $orange;
+  color:$white;
+  font-size: 20px;
+
+  .left {
+    display: inline-block;
+    margin: 0 9%;
+    width: 60%;
+    vertical-align: top;
+    padding-top: 50px;
+    img {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  .right {
+    display: inline-block;
+    width: 170px;
+    height: 210px;
+
+    img {
+      margin: 0 20px;
+      height:100%;
+    }
+  }
+}
+
+#form {
+  form {
+    position: absolute;
+    top: 70px;
+    left: 10%;
+    z-index: 10;
+    width: 1021px;
+    height: 585px;
+
+    &.yay {
+      background: transparent url("CPBG_YES_Form.png") repeat 0 0;
+      background-size: 100%;
+    }
+    &.nay {
+      background: transparent url("CPBG_NO_Form.png") repeat 0 0;
+      background-size: 100%;
+    }
+
+    .inputs {
+      margin: 370px 0 0 260px;
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      input {
+        padding: 10px;
+        width: 80%;
+      }
+      .field_with_errors {
+        color: red;
+      }
+      .submit {
+        margin: 0 auto;
+        width: 100%;
+
+        input {
+          font-family: "hwt-american-outline";
+          color: $white;
+          font-size: 30px;
+          border: none;
+          background-color: transparent;
+          padding: 0;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  h1,h2 {
+    font-size: 22px;
+  }
+  h3  {
+    font-size: 8px;
+  }
+
+  #form {
+    form {
+      left:0;
+    }
+  }
+}

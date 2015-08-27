@@ -1,0 +1,13 @@
+%table.rsvps
+  %tr
+    %th.attending Attending
+    %th.name Name
+    %th.comment Comment
+    %th.date Date
+
+  - @rsvps.each do |rsvp|
+    %tr{class: cycle('even', 'odd')}
+      %td= rsvp.attending
+      %td= rsvp.name
+      %td= rsvp.comment
+      %td= rsvp.created_at
