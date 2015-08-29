@@ -8,7 +8,7 @@ $orange: #F26522;
 $white: #F8F4F1;
 
 body {
-  background: transparent url("BKGRND-paper.png") repeat 0 0;
+  background: transparent image-url("BKGRND-paper.png") repeat 0 0;
   font-family: "franklin-gothic-urw";
   font-size: 24px;
   line-height: 30px;
@@ -17,7 +17,7 @@ body {
 
 h1,h2 {
   font-family: "hwt-slab-antique";
-  font-size: 44px;
+  font-size: 33px;
   font-weight: normal;
   letter-spacing: 2px;
   display: inline-block;
@@ -27,6 +27,13 @@ h2, h3 {
   text-align: center;
 }
 
+h2 {
+ font-size: 38px;
+}
+h3{
+  font-family: "hwt-artz";
+}
+
 .full {
   width: 100%;
 }
@@ -34,12 +41,15 @@ h2, h3 {
 .spacer {
   width: 70%;
   margin: 20px auto;
-  background: transparent url("CPBG_Line.png") no-repeat 0 5px;
+  background: transparent image-url("CPBG_Line.png") no-repeat 0 5px;
+  background-size: 100%;
 }
 
 .ornament {
-  background: transparent url("CPBG_ornament.png") no-repeat 0 20px;
-  background-size: 100%;
+  img {
+    height: 35px;
+    width: 35px;
+  }
 }
 
 .content {
@@ -51,7 +61,7 @@ h2, h3 {
 
   #midline{
     margin: 0 auto;
-    width:85%;
+    width:82%;
   }
 }
 
@@ -83,26 +93,25 @@ table.rsvps {
 }
 
 #top-bar {
-  background: transparent url("diagonal-pattern.png") repeat 0 0;
+  background: transparent image-url("diagonal-pattern.png") repeat 0 0;
   height: 70px;
   width: 100%;
   position: fixed;
   z-index: 20;
 
   h1 {
-    margin-left: 65px;
+    margin-left: 20px;
     padding: 20px 0;
     vertical-align: top;
   }
 
   #vote {
     display: inline-block;
-    margin-right: 20px;
     vertical-align: top;
 
     #yay,#nay {
       cursor: pointer;
-      margin: 11px 20px;
+      margin: 12px 10px;
       display: inline-block;
       overflow: hidden;
       text-indent: -15000px;
@@ -111,11 +120,11 @@ table.rsvps {
     }
 
     #yay {
-      background: url('CPBG_Yay.png') no-repeat 0 0;
+      background: image-url('CPBG_Yay.png') no-repeat 0 0;
       background-size: 100%;
     }
     #nay {
-      background: url('CPBG_Nay.png') no-repeat 0 0;
+      background: image-url('CPBG_Nay.png') no-repeat 0 0;
       background-size: 100%;
     }
 
@@ -126,16 +135,17 @@ table.rsvps {
 
   #ribbon {
     display: inline-block;
+    float:right;
+    margin-right: 20px;
   }
 }
 
 #bottom-spacer {
-  background: transparent url("diagonal-pattern.png") repeat 0 0;
+  background: transparent image-url("diagonal-pattern.png") repeat 0 0;
   height:10px;
 }
 
 #bottom-bar {
-  height: 210px;
   background-color: $orange;
   color:$white;
   font-size: 20px;
@@ -145,7 +155,7 @@ table.rsvps {
     margin: 0 9%;
     width: 60%;
     vertical-align: top;
-    padding-top: 50px;
+    padding-top: 45px;
     img {
       width: 50%;
       height: 50%;
@@ -168,29 +178,30 @@ table.rsvps {
   form {
     position: absolute;
     top: 70px;
-    left: 10%;
+    left: 0;
     z-index: 10;
     width: 1021px;
     height: 585px;
 
     &.yay {
-      background: transparent url("CPBG_YES_Form.png") repeat 0 0;
+      background: transparent image-url("CPBG_YES_Form.png") repeat 0 0;
       background-size: 100%;
     }
     &.nay {
-      background: transparent url("CPBG_NO_Form.png") repeat 0 0;
+      background: transparent image-url("CPBG_NO_Form.png") repeat 0 0;
       background-size: 100%;
     }
 
     .inputs {
-      margin: 370px 0 0 260px;
+      margin: 337px 0 0 260px;
       label {
         display: block;
         margin: 5px 0;
       }
-      input {
+      input, textarea {
         padding: 10px;
         width: 80%;
+        border: 1px solid $light_grey;
       }
       .field_with_errors {
         color: red;
@@ -206,11 +217,20 @@ table.rsvps {
           border: none;
           background-color: transparent;
           padding: 0;
-          margin-top: 10px;
           cursor: pointer;
         }
       }
     }
+  }
+  #cancel {
+    font-family: "hwt-american-outline";
+    color: $white;
+    font-size: 30px;
+    float: right;
+    width: 30px;
+    height:30px;
+    margin: -14px 15px 0 0;
+    cursor: pointer;
   }
 }
 
@@ -223,12 +243,59 @@ table.rsvps {
     font-size: 22px;
   }
   h3  {
-    font-size: 8px;
+    font-size: 20px;
+  }
+  #midline {
+    width: 66%;
+  }
+}
+
+@media all
+  and (max-width: 1023px) {
+
+  #top-bar {
+    h1 {
+      font-size: 22px;
+      margin-left: 5px;
+    }
+    #ribbon {
+      margin-right: 0px;
+    }
+    #vote {
+      #yay,#nay {
+        background: transparent none repeat 0 0;
+        color:$grey;
+        font-family: "hwt-american-outline";
+        text-indent: 0;
+        margin: 0;
+        padding:20px 5px;
+        width: 75px;
+        height: 30px;
+        text-decoration: none;
+      }
+      #yay:hover,#nay:hover {
+        color:$orange;
+      }
+    }
   }
 
+  #bottom-bar {
+    .left {
+      width:55%;
+    }
+  }
+}
+
+@media all
+  and (min-width: 1163px) {
+  #top-bar {
+    h1 {
+      font-size: 44px;
+    }
+  }
   #form {
     form {
-      left:0;
+      left:10%;
     }
   }
 }

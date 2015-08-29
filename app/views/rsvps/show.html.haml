@@ -4,8 +4,8 @@
   - else
     %h1 WILL YOU JAM WITH US?
     #vote
-      = link_to '#', new_rsvp_path(rsvp: 'yay'), :remote => true, :id => 'yay'
-      = link_to '#', new_rsvp_path(rsvp: 'nay'), :remote => true, :id => 'nay'
+      = link_to 'YAY', new_rsvp_path(rsvp: 'yay'), :remote => true, :id => 'yay'
+      = link_to 'NAY', new_rsvp_path(rsvp: 'nay'), :remote => true, :id => 'nay'
 
   #ribbon
     = image_tag 'CPBG_Logo.png'
@@ -26,7 +26,7 @@
   #midline
     %h2
       CABOOSE FARM
-      %span.ornament &nbsp
+      %span.ornament= image_tag("CPBG_ornament.png")
       SABILLASVILLE, MD
 
   .spacer &nbsp;
