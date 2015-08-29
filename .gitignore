@@ -6,6 +6,9 @@
 
 # Ignore bundler config.
 /.bundle
+/vendor/*
+
+/public/assets/*
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -15,3 +18,5 @@
 /log/*
 !/log/.keep
 /tmp
+
+.DS_Store
